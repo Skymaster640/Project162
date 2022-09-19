@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Bowling game</title>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>   
+        <script src="https://cdn.jsdelivr.net/gh/n5ro/aframe-physics-system@v4.0.1/dist/aframe-physics-system.min.js"></script>
+        <script src="https://unpkg.com/aframe-physics-extras@0.1.2/dist/aframe-physics-extras.min.js"></script>
+        <script src = "./throw.js"></script>
+    </head>
+    <body>
+        <a-scene
+        id = "scene">
+    
+    <a-assets>
+        <a-asset-item
+        id="bowling_alley"
+        src = "./models/Project161bowlinglane/tinker.obj"></a-asset-item>
+        <a-asset-item
+        id="bowling_ball"
+        src = "./models/bowlingball/scene.gltf"></a-asset-item>
+        <a-asset-item
+        id="bowling_pin"
+        src = "./models/bowlingpin/scene.gltf"></a-asset-item>
+    </a-assets>    
+
+    <a-entity
+    light = "type:ambient;color:white;intensity:1">
+
+    </a-entity>
+
+    <a-entity
+        id="camera"
+        camera
+        position = "0 1.6 0"
+        wasd-controls
+        look-controls = "pointerLockEnabled:false">
+        
+        <a-cursor>
+            
+        </a-cursor>
+    
+    </a-entity>
+
+    <a-entity
+    bowlingball></a-entity>
+
+    <a-plane
+    id="ground"
+    position="0 1 0"
+    rotation = "-90 0 0"
+    height = "100"
+    width = "20"
+    color = "pink"
+    static-body
+    visible = "true"
+    repeat = "5,5"></a-plane>
+
+    <a-cylinder
+    position="-10 1 0"
+    rotation = "90 0 0"
+    radius="0.5"
+    height="200"
+    color="red"></a-cylinder>
+
+    <a-cylinder
+    position="10 1 0"
+    rotation = "90 0 0"
+    radius="0.5"
+    height="200"
+    color="red"></a-cylinder>
+
+    <a-box color="#7E7E7E" id="back-wall" position="0 0 -20"  depth="1" height="10" width="20" opacity="1" ></a-box>
+    <a-box color="black" id="top-wall" position="0 5 -15"  depth="5" height="1" width="20" opacity="1" ></a-box>
+
+    <a-box color="black" id="left-wall" position="-10 0 -20"  depth="5" height="10" width="1" opacity="1" ></a-box>
+    <a-box color="black" id="right-wall" position="10 0 -20"  depth="5" height="10" width="1" opacity="1" ></a-box>
+
+    <a-entity
+        id="pin1"
+        gltf-model="#bowling_pin"
+        position = "-14.7 1 16"
+        rotation = "0 0 0"
+        scale = "1 1 1"
+        dynamic-body="mass:0.5"></a-entity>
+    
+        <a-entity
+        id="pin2"
+        gltf-model="#bowling_pin"
+        position = "-15 1 15.8"
+        rotation = "0 0 0"
+        scale = "1 1 1"
+        dynamic-body></a-entity>
+
+        <a-entity
+        id="pin3"
+        gltf-model="#bowling_pin"
+        position = "-14.4 1 15.8"
+        rotation = "0 0 0"
+        scale = "1 1 1"
+        dynamic-body></a-entity>
+
+        <a-entity
+        id="pin4"
+        gltf-model="#bowling_pin"
+        position = "-14.7 1 15.6"
+        rotation = "0 0 0"
+        scale = "1 1 1"
+        dynamic-body></a-entity>
+
+        <a-entity
+        id="pin5"
+        gltf-model="#bowling_pin"
+        position = "-14.1 1 15.6"
+        rotation = "0 0 0"
+        scale = "1 1 1"
+        dynamic-body></a-entity>
+
+        <a-entity
+        id="pin6"
+        gltf-model="#bowling_pin"
+        position = "-15.3 1 15.6"
+        rotation = "0 0 0"
+        scale = "1 1 1"
+        dynamic-body></a-entity>
+
+        <a-entity
+        id="pin7"
+        gltf-model="#bowling_pin"
+        position = "-15.6 1 15.4"
+        rotation = "0 0 0"
+        scale = "1 1 1"
+        dynamic-body></a-entity>
+
+        <a-entity
+        id="pin8"
+        gltf-model="#bowling_pin"
+        position = "-15 1 15.4"
+        rotation = "0 0 0"
+        scale = "1 1 1"
+        dynamic-body></a-entity>
+
+        <a-entity
+        id="pin9"
+        gltf-model="#bowling_pin"
+        position = "-14.4 1 15.4"
+        rotation = "0 0 0"
+        scale = "1 1 1"
+        dynamic-body></a-entity>
+
+        <a-entity
+        id="pin10"
+        gltf-model="#bowling_pin"
+        position = "-13.8 1 15.4"
+        rotation = "0 0 0"
+        scale = "1 1 1"
+        dynamic-body></a-entity>
+
+    </a-scene>
+    </body>
+</html>
